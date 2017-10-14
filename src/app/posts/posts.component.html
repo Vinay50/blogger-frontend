@@ -1,0 +1,17 @@
+<div class='container'>
+	<h1 class="headline">{{ pageTitle }}</h1>
+	<div class="card" *ngFor="let post of posts">
+        <a (click)="goToShow(post)">
+            <div class="card-block ">
+                <div class="post-list">
+                    <h4 class="card-title">{{ post.title }}</h4>
+                    <p class="card-text">
+                        <small class="text-muted">Last updated: {{ post.updated_at | date }}
+                        </small>
+                    </p>
+                    <p class="card-text">{{ post.body }}</p>
+                </div><br>
+            </div>
+        </a>
+	</div>
+</div>
