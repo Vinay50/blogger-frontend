@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+    background-color: white;
+    font-size: 14px;
+    line-height: 1.33;
+    color: rgba(0,0,0,.8);
+    font-smoothing: antialiased;
+}

@@ -1,0 +1,61 @@
+<div class=" form-container" style="margin-top:90px">
+	<div class='row' style="justify-content: center;">
+		<div class="col-md-6">
+			<h1>Create a Post</h1>
+			<div>
+				<form (ngSubmit)="createPost(post); postForm.reset()" #postForm="ngForm">
+					<div class="form-group">
+						<label for="title">Post Title</label>
+						<input type="text"
+										class="form-control"
+										id="title"
+										placeholder="Title"
+										required
+										name="title"
+										#title='ngModel'
+										[(ngModel)]="post.title"
+						>
+						<div [hidden]="title.valid || title.pristine"
+									class='alert alert-danger'
+						>
+							Title is required
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="body">Post Description <em>(Optional)</em></label>
+						<textarea type="body"
+										class="form-control"
+                                        id="body"
+                                        required
+										name="body"
+										#body='ngModel'
+                                        [(ngModel)]="post.body">
+                        </textarea>   
+                        <div [hidden]="body.valid || body.pristine"
+                        class='alert alert-danger' >
+                            Description is required
+                        </div>             
+					</div>
+
+					<button type="submit"
+						class='btn btn-outline-primary btn-lg'
+						[disabled]="!postForm.form.valid"
+						[hidden]="submitted"
+					>
+						Generate Post
+					</button>
+
+					<div
+						[hidden]="!submitted"
+						class="alert alert-success"
+						role="alert"
+					>
+						Your Post has been created <a class="alert-link" routerLink="/posts">View all Posts</a>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
